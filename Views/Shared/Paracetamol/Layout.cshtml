@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>PARACETAMOL</title>
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="navbar-header">
+            <ul class="nav nav-pills">
+                <li role="banner"><a href="/Product/Paracetamol">Paracetamol Tab Info</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li > @Html.ActionLink("Medicine", "MediciencPage", "Product")</li>
+                <li>@Html.ActionLink("Stocks", "StockParacetamol", "Product")</li>
+                <li>@Html.ActionLink("Clients", "ClientParacetamol", "Product")</li>
+            </ul>
+        </div>
+    </nav>
+    @RenderBody();
+</body>
+</html>

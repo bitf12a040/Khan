@@ -1,0 +1,22 @@
+﻿@model MedicalAndSurgical.Models.SignUp
+@{
+    Layout = "~/views/Shared/AllPages/Layout.cshtml";
+}
+
+<br />
+<div class="bs-docs-header" id="content" style="background-color:darkviolet; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <h3>
+            Please Enter the Name and password of the Admin  that you want to Delete.
+        </h3>
+        @using (@Html.BeginForm("DeleteAdminCheck", "Home", FormMethod.Post))
+        {
+            <label>UserName : </label>
+            @Html.TextBoxFor(model => model.Name) <br /> <br />
+            <label>Password : </label>
+            @Html.TextBoxFor(model => model.Password) <br /> <br />
+            <input type="submit" id="b1" value="Delete" />
+        }
+        @{Html.EndForm();}
+    </div>
+</div>

@@ -1,0 +1,21 @@
+﻿@model MedicalAndSurgical.Models.Store
+@{
+    Layout = "~/views/Shared/Stock/Layout.cshtml";
+}
+
+<br />
+<div class="bs-docs-header" id="content" style="background-color:darkviolet; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <h3>
+            Please Enter the Id of an Item then Click Show Data to show the Data for Updation of data.
+        </h3>
+        @using (@Html.BeginForm("UpdateStoreWork", "Home", FormMethod.Post)) { 
+            <label>Item ID : </label>
+            @Html.TextBoxFor(model => model.Id)<br /> <br />
+            <input type="submit" id="b1" value="Show Data" />
+            }
+    </div>
+</div>
+
+<br />
+<br />

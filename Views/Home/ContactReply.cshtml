@@ -1,0 +1,24 @@
+﻿@model List<MedicalAndSurgical.Models.ContactU>
+@{
+    Layout = "~/views/Shared/AllPages/Layout.cshtml";
+}
+
+<div class="bs-docs-header" id="content1" style="background-color:blue; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <table>
+            <tr>
+                <td><h3> User Name </h3></td>
+                <td><h3> Date  </h3></td>
+                <td><h3> Comment</h3></td>
+            </tr>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td> @x.Name</td>
+                    <td> @x.Date </td>
+                    <td> @x.Message </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

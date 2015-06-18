@@ -1,0 +1,36 @@
+﻿@model MedicalAndSurgical.Models.ContactU
+@{
+    Layout = "~/views/Shared/AllPages/Layout.cshtml";
+}
+
+<div class="container marketing">
+    <div class="row">
+        <div class="col-lg-4" style="width:500px; background-color:blue">
+            <h3>
+                Please Enter the following fields for give any Comment.....
+            </h3>
+
+            @using (@Html.BeginForm("ContactSave", "Home", FormMethod.Post, new { id = "f1" }))
+            {
+                <div class="col-lg-4">
+                    @Html.TextBoxFor(model => model.Name, new { @id = "n1", @class = "form-control col-lg-5", @placeholder = "Username", Required = "ture" }) <br /> <br />
+                        @Html.TextBoxFor(model => model.Email, new { type = "email", @id = "p1", @class = "form-control col-lg-5", @placeholder = "Email", Required = "ture" })<br/><br/>
+                        @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control col-lg-5", @placeholder = "Phone", Required = "ture" }) <br /> <br />
+                        @Html.TextAreaFor(model => model.Message, new { @class = "form-control col-lg-5", @placeholder = "Comment", Required = "ture" }) <br /> <br />
+                        <input type="submit" class="btn btn-default" id="b1" value="Submit" />
+                </div>
+            }
+            @{Html.EndForm();}
+        </div>
+
+        <div class="col-lg-4" style="width:400px; background-color:white">
+            <p> you can meet us at the Address given below.</p>
+            <br />
+            <p> Street No: 20 House No: 15</p>
+            <p>Mughalpura Lahore</p>
+            <p>Pakistan</p><br />
+            <p>0322-4965113</p>
+            <p>bilalkhan4965@gmail.com</p>
+        </div>
+    </div>
+</div>

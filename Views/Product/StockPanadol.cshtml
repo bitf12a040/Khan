@@ -1,0 +1,25 @@
+﻿@model List<MedicalAndSurgical.Models.Product>
+@{
+    Layout = "~/views/Shared/Panadol/Layout.cshtml";
+}
+<div class="bs-docs-header" id="content1" style="background-color:yellowgreen; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <table>
+            <tr>
+                <td><h3> Item ID </h3></td>
+                <td><h3> Item Name </h3></td>
+                <td><h3> Quantity  </h3></td>
+                <td><h3> Unit Price</h3></td>
+            </tr>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td> @x.Id</td>
+                    <td> @x.PName </td>
+                    <td> @x.Quantity  </td>
+                    <td> @x.Price </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

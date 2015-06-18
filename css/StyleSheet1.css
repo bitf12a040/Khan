@@ -1,0 +1,20 @@
+﻿body {
+   padding: 40px 0px;
+}
+
+
+.navbar {
+         background-color: #e1d6d6;
+        font-size:15px;
+
+}
+
+.navbar li a:hover {
+    /*border-bottom:2px solid #06ff1b;*/
+    border-left: 2px solid #f0f0f0;
+    border-right: 2px solid #f0f0f0;
+    border-bottom-left-radius: 2px;
+    transition: 0.10s;
+    color: white;
+    font-family: 'Copperplate Gothic';
+}

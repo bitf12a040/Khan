@@ -1,0 +1,49 @@
+﻿@model MedicalAndSurgical.Models.SignUp
+
+@{
+    Layout = "~/Views/Shared/Stock/Layout.cshtml";
+}
+
+<br />
+<div class="bs-docs-header" id="content" style="background-color:darkviolet; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        
+            <h3>
+                Please Enter the Name and password for Sign up as Admin in this Company.
+            </h3>
+        
+                    @using (@Html.BeginForm("SignUpAdd", "Home", FormMethod.Post, new { id = "f1" }))
+        {
+            <div class="col-lg-4">
+                    @Html.TextBoxFor(model => model.Name, new { @id = "n1", @class = "form-control col-lg-5", @placeholder = "Username", Required = "ture"}) <br /> <br />
+                    @Html.TextBoxFor(model => model.Password, new { type = "password", @id = "p1", @class = "form-control col-lg-5", @placeholder = "Password", Required = "ture" })
+                    <input type="button" id="b2" class="btn btn-warning" value="Check" /> <br /> <br />
+                    @Html.TextBoxFor(model => model.PhoneNo, new { @class = "form-control col-lg-5", @placeholder = "Phone", Required = "ture" }) <br /> <br />
+                    @Html.TextBoxFor(model => model.Email, new { @type = "email", @class = "form-control col-lg-5", @placeholder = "Email", Required = "ture" }) <br /> <br />
+                    <input type="submit" class="btn btn-default" id="b1" value="SignUp" />
+                </div>
+        }
+            @{Html.EndForm();}
+        <script>
+            //function init() {
+                //$('document').ready(function () {
+                $('#b2').on('click', function () {
+                    var q = $('#n1').value;
+                    // $('#f1').append("<p> Hello"+s+"</p>")
+                    $.getJSON("/Home/Check?Uname =" + q, function (d) {
+                        if (d) {
+                            alert(s);
+                            $('#f1').append("<p> USer exist" + q + " </p>");
+                        }
+                        else {
+                            //alert(s);
+                            $('#f1').append("<p> USer not exist " + q + "  </p>");
+                        }
+                    });
+                });
+                // });
+           // }
+        </script>
+
+    </div>
+</div>

@@ -1,0 +1,27 @@
+﻿@model MedicalAndSurgical.Models.SignUp
+@{
+    Layout = "~/views/Shared/AllPages/Layout.cshtml";
+}
+
+<br />
+<div class="bs-docs-header" id="content" style="background-color:darkviolet; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <h3>
+            Please Enter the Name and password of the Admin  to Update the information about Stock and Clients of product.
+        </h3>
+        @using (@Html.BeginForm("SignInCheck", "Home", FormMethod.Post))
+        {
+            <div class="col-lg-4">
+                @Html.TextBoxFor(model => model.Name, new { @id = "n1", @class = "form-control col-lg-5", @placeholder = "Username", @Required = "true"}) <br /> <br />
+                @Html.TextBoxFor(model => model.Password, new { type = "password", @id = "p1", @class = "form-control col-lg-5", @placeholder = "Password", @Required = "true"})
+                <input type="submit" id="b1" value="SignIN" />
+            </div>
+        }
+        @{Html.EndForm();}
+    </div>
+</div>
+<br />
+<br />
+<div class="bs-docs-header" id="content" style="background-color:darkviolet; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <a href="/Home/DeleteAdmin" style="color:white">Click If you want to Delete Admin</a><br />
+</div>

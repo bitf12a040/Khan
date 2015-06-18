@@ -1,0 +1,28 @@
+﻿@model MedicalAndSurgical.Models.Store
+@{
+    Layout = "~/views/Shared/Stock/Layout.cshtml";
+}
+
+<br />
+<div class="bs-docs-header" id="content" style="background-color:darkviolet; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <h3>
+            Please Update the Following text fields According to your choice then Update it.
+        </h3>
+        @using (Html.BeginForm("updateStoreCheck", "Home", FormMethod.Post)) { 
+            <label>Item Id : </label>
+            @Html.TextBoxFor(m => m.Id, new { value = Model.Id} ) <br/> <br/>
+            <label>Item Name : </label>
+            @Html.TextBoxFor(m => m.Name, new { value = Model.Name} ) <br/> <br/>
+            <label>PhoneNO : </label>
+            @Html.TextBoxFor(m => m.PhoneNo, new { value = Model.PhoneNo}) <br/> <br/>
+            <label>Address : </label>
+            @Html.TextBoxFor(m => m.Address, new { value = Model.Address})<br/> <br/>
+            <input type="submit" id="b1" value="Update" />
+            }
+            @{Html.EndForm();}
+    </div>
+</div>
+
+<br />
+<br />

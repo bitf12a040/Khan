@@ -1,0 +1,25 @@
+﻿@model List<MedicalAndSurgical.Models.Store>
+@{
+    Layout = "~/views/Shared/Glove/Layout.cshtml";
+}
+<div class="bs-docs-header" id="content1" style="background-color:yellowgreen; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <table>
+            <tr>
+                <td><h3> Hospital ID </h3></td>
+                <td><h3> Hospital Name </h3></td>
+                <td><h3> Phone NO  </h3></td>
+                <td><h3> Address </h3></td>
+            </tr>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <td> @x.Id</td>
+                    <td> @x.Name </td>
+                    <td> @x.PhoneNo</td>
+                    <td> @x.Address </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

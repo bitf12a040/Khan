@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/views/Shared/AllPages/Layout.cshtml";
+}
+
+<br />
+<div class="bs-docs-header" id="content" style="background-color:darkviolet; color:white; padding-top:20px; padding-bottom:20px;" tabindex="-1">
+    <div class="container">
+        <h3>
+            Please Enter the appropriate Options.
+        </h3>
+
+        @using (@Html.BeginForm("SignUpAdd", "Home", FormMethod.Post, new { id = "f1" }))
+        {
+            <select name="Catagory" id="s1">
+                <option value="0">Surgical</option>
+                <option value="1">Medicines</option>
+            </select> <br/> <br/>
+            <select name="Name" id="s2">
+
+            </select> <br/> <br/>
+            <input type="button" id="b1" value="Search" />
+        }
+        @{Html.EndForm();}
+        <table id="t1">
+            <tr>
+                <td>Name</td>
+                <td>Price</td>
+            </tr>
+        </table>
+        <script>
+            $('document').ready(function () {
+                $('#s2').on('mouseenter', function () {
+                    var s = $('#s1').val();
+                    $.getJSON('/Home/PutNames?Uname = ' + s, function (data) {
+                        for (i = 0; i < data.size ; i++) {
+                            $('#s2').append("<option value=" + i + ">" + data[i].PName + "</option>")
+                        }
+                    });
+                });
+
+                $('#b1').on('click', function () {
+                    var p = $('#s2').val();
+                    $.getJSON('/Home/Detail?Uname = ' + s, function (d) {
+                        $('#t1').append("<tr> <td>" + d.PName + "/td><td>" + d.Price + "</td></tr>")
+                    });
+                });
+            });
+        </script>
+    </div>
+</div>

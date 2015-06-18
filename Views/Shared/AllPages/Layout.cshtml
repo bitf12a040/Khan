@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Medicines & Surgical Information</title>
+    <script src="~/Scripts/jquery-1.11.3.min.js"></script>
+    <script src="~/Scripts/bootstrap.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation" >
+        <div class="navbar-header">
+            <ul class="nav nav-pills">
+                <li role="banner"><a href="/Home/Index">Medicines & Surgical Info</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="nav navbar-nav">
+                <li > @Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("ProductList", "ProductList", "Product")</li>
+                <li>@Html.ActionLink("Custmor List", "CustmorList", "Product")</li>
+                <li>@Html.ActionLink("Contact Us", "ContactUS", "Home")</li>
+                <li>@Html.ActionLink("Sign IN", "SignIn", "Home")</li>
+                @*<li>@Html.ActionLink("SearchProduct", "SearchProduct", "Home")</li>*@
+            </ul>
+        </div>
+    </nav>
+    @RenderBody();
+</body>
+</html>
